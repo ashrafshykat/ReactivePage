@@ -7,6 +7,7 @@ import { createBrowserRouter , RouterProvider, Outlet } from "react-router-dom"
 import ErrorPage from './ErrorPage.jsx'
 import Layout from './Layout/Layout.jsx'
 import User from './User.jsx'
+import { DataProvider } from './DataContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <DataProvider>
+      <RouterProvider router={router}/>
+    </DataProvider>
   </StrictMode>,
 )
